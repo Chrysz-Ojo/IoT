@@ -1,0 +1,371 @@
+package org.example;
+
+import java.util.*;
+
+public class GraphShortestPath {
+
+    public static Map<String, Integer> dijkstra(Map<String, Map<String, Integer>> graph, String start) {
+        Map<String, Integer> distances = new HashMap<>();
+        for (String node : graph.keySet()) {
+            distances.put(node, Integer.MAX_VALUE);
+        }
+        distances.put(start, 0);
+
+        PriorityQueue<Map.Entry<String, Integer>> priorityQueue = new PriorityQueue<>(Map.Entry.comparingByValue());
+        priorityQueue.add(new AbstractMap.SimpleEntry<>(start, 0));
+
+        while (!priorityQueue.isEmpty()) {
+            Map.Entry<String, Integer> currentEntry = priorityQueue.poll();
+            String currentNode = currentEntry.getKey();
+            int currentDistance = currentEntry.getValue();
+
+            if (currentDistance > distances.get(currentNode)) {
+                continue;
+            }
+
+            for (Map.Entry<String, Integer> neighbor : graph.get(currentNode).entrySet()) {
+                String neighborNode = neighbor.getKey();
+                int weight = neighbor.getValue();
+                int distance = currentDistance + weight;
+
+                if (distance < distances.get(neighborNode)) {
+                    distances.put(neighborNode, distance);
+                    priorityQueue.add(new AbstractMap.SimpleEntry<>(neighborNode, distance));
+                }
+            }
+        }
+
+        return distances;
+    }
+
+    public static void main(String[] args) {
+        Map<String, Map<String, Integer>> graph = new HashMap<>();
+        graph.put("A", Map.of("B", 6, "C", 4));
+        graph.put("B", Map.of("D", 2, "E", 3));
+        graph.put("C", Map.of("F", 5));
+        graph.put("D", new HashMap<>());
+        graph.put("E", Map.of("F", 1));
+        graph.put("F", new HashMap<>());
+
+        Map<String, Integer> shortestPaths = dijkstra(graph, "A");
+        System.out.println("Shortest path distances from 'A': " + shortestPaths);
+    }
+}
+package org.example;
+
+import java.util.*;
+
+public class GraphShortestPath {
+
+    public static Map<String, Integer> dijkstra(Map<String, Map<String, Integer>> graph, String start) {
+        Map<String, Integer> distances = new HashMap<>();
+        for (String node : graph.keySet()) {
+            distances.put(node, Integer.MAX_VALUE);
+        }
+        distances.put(start, 0);
+
+        PriorityQueue<Map.Entry<String, Integer>> priorityQueue = new PriorityQueue<>(Map.Entry.comparingByValue());
+        priorityQueue.add(new AbstractMap.SimpleEntry<>(start, 0));
+
+        while (!priorityQueue.isEmpty()) {
+            Map.Entry<String, Integer> currentEntry = priorityQueue.poll();
+            String currentNode = currentEntry.getKey();
+            int currentDistance = currentEntry.getValue();
+
+            if (currentDistance > distances.get(currentNode)) {
+                continue;
+            }
+
+            for (Map.Entry<String, Integer> neighbor : graph.get(currentNode).entrySet()) {
+                String neighborNode = neighbor.getKey();
+                int weight = neighbor.getValue();
+                int distance = currentDistance + weight;
+
+                if (distance < distances.get(neighborNode)) {
+                    distances.put(neighborNode, distance);
+                    priorityQueue.add(new AbstractMap.SimpleEntry<>(neighborNode, distance));
+                }
+            }
+        }
+
+        return distances;
+    }
+
+    public static void main(String[] args) {
+        Map<String, Map<String, Integer>> graph = new HashMap<>();
+        graph.put("A", Map.of("B", 6, "C", 4));
+        graph.put("B", Map.of("D", 2, "E", 3));
+        graph.put("C", Map.of("F", 5));
+        graph.put("D", new HashMap<>());
+        graph.put("E", Map.of("F", 1));
+        graph.put("F", new HashMap<>());
+
+        Map<String, Integer> shortestPaths = dijkstra(graph, "A");
+        System.out.println("Shortest path distances from 'A': " + shortestPaths);
+    }
+}
+package org.example;
+
+import java.util.*;
+
+public class GraphShortestPath {
+
+    public static Map<String, Integer> dijkstra(Map<String, Map<String, Integer>> graph, String start) {
+        Map<String, Integer> distances = new HashMap<>();
+        for (String node : graph.keySet()) {
+            distances.put(node, Integer.MAX_VALUE);
+        }
+        distances.put(start, 0);
+
+        PriorityQueue<Map.Entry<String, Integer>> priorityQueue = new PriorityQueue<>(Map.Entry.comparingByValue());
+        priorityQueue.add(new AbstractMap.SimpleEntry<>(start, 0));
+
+        while (!priorityQueue.isEmpty()) {
+            Map.Entry<String, Integer> currentEntry = priorityQueue.poll();
+            String currentNode = currentEntry.getKey();
+            int currentDistance = currentEntry.getValue();
+
+            if (currentDistance > distances.get(currentNode)) {
+                continue;
+            }
+
+            for (Map.Entry<String, Integer> neighbor : graph.get(currentNode).entrySet()) {
+                String neighborNode = neighbor.getKey();
+                int weight = neighbor.getValue();
+                int distance = currentDistance + weight;
+
+                if (distance < distances.get(neighborNode)) {
+                    distances.put(neighborNode, distance);
+                    priorityQueue.add(new AbstractMap.SimpleEntry<>(neighborNode, distance));
+                }
+            }
+        }
+
+        return distances;
+    }
+
+    public static void main(String[] args) {
+        Map<String, Map<String, Integer>> graph = new HashMap<>();
+        graph.put("A", Map.of("B", 6, "C", 4));
+        graph.put("B", Map.of("D", 2, "E", 3));
+        graph.put("C", Map.of("F", 5));
+        graph.put("D", new HashMap<>());
+        graph.put("E", Map.of("F", 1));
+        graph.put("F", new HashMap<>());
+
+        Map<String, Integer> shortestPaths = dijkstra(graph, "A");
+        System.out.println("Shortest path distances from 'A': " + shortestPaths);
+    }
+}
+package org.example;
+
+import java.util.*;
+
+public class GraphShortestPath {
+
+    public static Map<String, Integer> dijkstra(Map<String, Map<String, Integer>> graph, String start) {
+        Map<String, Integer> distances = new HashMap<>();
+        for (String node : graph.keySet()) {
+            distances.put(node, Integer.MAX_VALUE);
+        }
+        distances.put(start, 0);
+
+        PriorityQueue<Map.Entry<String, Integer>> priorityQueue = new PriorityQueue<>(Map.Entry.comparingByValue());
+        priorityQueue.add(new AbstractMap.SimpleEntry<>(start, 0));
+
+        while (!priorityQueue.isEmpty()) {
+            Map.Entry<String, Integer> currentEntry = priorityQueue.poll();
+            String currentNode = currentEntry.getKey();
+            int currentDistance = currentEntry.getValue();
+
+            if (currentDistance > distances.get(currentNode)) {
+                continue;
+            }
+
+            for (Map.Entry<String, Integer> neighbor : graph.get(currentNode).entrySet()) {
+                String neighborNode = neighbor.getKey();
+                int weight = neighbor.getValue();
+                int distance = currentDistance + weight;
+
+                if (distance < distances.get(neighborNode)) {
+                    distances.put(neighborNode, distance);
+                    priorityQueue.add(new AbstractMap.SimpleEntry<>(neighborNode, distance));
+                }
+            }
+        }
+
+        return distances;
+    }
+
+    public static void main(String[] args) {
+        Map<String, Map<String, Integer>> graph = new HashMap<>();
+        graph.put("A", Map.of("B", 6, "C", 4));
+        graph.put("B", Map.of("D", 2, "E", 3));
+        graph.put("C", Map.of("F", 5));
+        graph.put("D", new HashMap<>());
+        graph.put("E", Map.of("F", 1));
+        graph.put("F", new HashMap<>());
+
+        Map<String, Integer> shortestPaths = dijkstra(graph, "A");
+        System.out.println("Shortest path distances from 'A': " + shortestPaths);
+    }
+}
+package org.example;
+
+import java.util.*;
+
+public class GraphShortestPath {
+
+    public static Map<String, Integer> dijkstra(Map<String, Map<String, Integer>> graph, String start) {
+        Map<String, Integer> distances = new HashMap<>();
+        for (String node : graph.keySet()) {
+            distances.put(node, Integer.MAX_VALUE);
+        }
+        distances.put(start, 0);
+
+        PriorityQueue<Map.Entry<String, Integer>> priorityQueue = new PriorityQueue<>(Map.Entry.comparingByValue());
+        priorityQueue.add(new AbstractMap.SimpleEntry<>(start, 0));
+
+        while (!priorityQueue.isEmpty()) {
+            Map.Entry<String, Integer> currentEntry = priorityQueue.poll();
+            String currentNode = currentEntry.getKey();
+            int currentDistance = currentEntry.getValue();
+
+            if (currentDistance > distances.get(currentNode)) {
+                continue;
+            }
+
+            for (Map.Entry<String, Integer> neighbor : graph.get(currentNode).entrySet()) {
+                String neighborNode = neighbor.getKey();
+                int weight = neighbor.getValue();
+                int distance = currentDistance + weight;
+
+                if (distance < distances.get(neighborNode)) {
+                    distances.put(neighborNode, distance);
+                    priorityQueue.add(new AbstractMap.SimpleEntry<>(neighborNode, distance));
+                }
+            }
+        }
+
+        return distances;
+    }
+
+    public static void main(String[] args) {
+        Map<String, Map<String, Integer>> graph = new HashMap<>();
+        graph.put("A", Map.of("B", 6, "C", 4));
+        graph.put("B", Map.of("D", 2, "E", 3));
+        graph.put("C", Map.of("F", 5));
+        graph.put("D", new HashMap<>());
+        graph.put("E", Map.of("F", 1));
+        graph.put("F", new HashMap<>());
+
+        Map<String, Integer> shortestPaths = dijkstra(graph, "A");
+        System.out.println("Shortest path distances from 'A': " + shortestPaths);
+    }
+}
+package org.example;
+
+import java.util.*;
+
+public class GraphShortestPath {
+
+    public static Map<String, Integer> dijkstra(Map<String, Map<String, Integer>> graph, String start) {
+        Map<String, Integer> distances = new HashMap<>();
+        for (String node : graph.keySet()) {
+            distances.put(node, Integer.MAX_VALUE);
+        }
+        distances.put(start, 0);
+
+        PriorityQueue<Map.Entry<String, Integer>> priorityQueue = new PriorityQueue<>(Map.Entry.comparingByValue());
+        priorityQueue.add(new AbstractMap.SimpleEntry<>(start, 0));
+
+        while (!priorityQueue.isEmpty()) {
+            Map.Entry<String, Integer> currentEntry = priorityQueue.poll();
+            String currentNode = currentEntry.getKey();
+            int currentDistance = currentEntry.getValue();
+
+            if (currentDistance > distances.get(currentNode)) {
+                continue;
+            }
+
+            for (Map.Entry<String, Integer> neighbor : graph.get(currentNode).entrySet()) {
+                String neighborNode = neighbor.getKey();
+                int weight = neighbor.getValue();
+                int distance = currentDistance + weight;
+
+                if (distance < distances.get(neighborNode)) {
+                    distances.put(neighborNode, distance);
+                    priorityQueue.add(new AbstractMap.SimpleEntry<>(neighborNode, distance));
+                }
+            }
+        }
+
+        return distances;
+    }
+
+    public static void main(String[] args) {
+        Map<String, Map<String, Integer>> graph = new HashMap<>();
+        graph.put("A", Map.of("B", 6, "C", 4));
+        graph.put("B", Map.of("D", 2, "E", 3));
+        graph.put("C", Map.of("F", 5));
+        graph.put("D", new HashMap<>());
+        graph.put("E", Map.of("F", 1));
+        graph.put("F", new HashMap<>());
+
+        Map<String, Integer> shortestPaths = dijkstra(graph, "A");
+        System.out.println("Shortest path distances from 'A': " + shortestPaths);
+    }
+}
+package org.example;
+
+import java.util.*;
+
+public class GraphShortestPath {
+
+    public static Map<String, Integer> dijkstra(Map<String, Map<String, Integer>> graph, String start) {
+        Map<String, Integer> distances = new HashMap<>();
+        for (String node : graph.keySet()) {
+            distances.put(node, Integer.MAX_VALUE);
+        }
+        distances.put(start, 0);
+
+        PriorityQueue<Map.Entry<String, Integer>> priorityQueue = new PriorityQueue<>(Map.Entry.comparingByValue());
+        priorityQueue.add(new AbstractMap.SimpleEntry<>(start, 0));
+
+        while (!priorityQueue.isEmpty()) {
+            Map.Entry<String, Integer> currentEntry = priorityQueue.poll();
+            String currentNode = currentEntry.getKey();
+             
+
+            if (currentDistance > distances.get(currentNode)) {
+                continue;
+            }
+
+            for (Map.Entry<String, Integer> neighbor : graph.get(currentNode).entrySet()) {
+                String neighborNode = neighbor.getKey();
+                int weight = neighbor.getValue();
+                int distance = currentDistance + weight;
+
+                if (distance < distances.get(neighborNode)) {
+                    distances.put(neighborNode, distance);
+                    priorityQueue.add(new AbstractMap.SimpleEntry<>(neighborNode, distance));
+                }
+            }
+        }
+
+        return distances;
+    }
+
+    public static void main(String[] args) {
+        Map<String, Map<String, Integer>> graph = new HashMap<>();
+        graph.put("A", Map.of("B", 6, "C", 4));
+        graph.put("B", Map.of("D", 2, "E", 3));
+        graph.put("C", Map.of("F", 5));
+        graph.put("D", new HashMap<>());
+        graph.put("E", Map.of("F", 1));
+        graph.put("F", new HashMap<>());
+
+        Map<String, Integer> shortestPaths = dijkstra(graph, "A");
+        System.out.println("Shortest path distances from 'A': " + shortestPaths);
+    }
+}
